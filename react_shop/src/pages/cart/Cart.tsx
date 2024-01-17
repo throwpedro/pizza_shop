@@ -14,13 +14,13 @@ function Cart() {
             <CenterContent>
                 <div className="cart-wrapper">
                     <h1>Cart</h1>
-                    <hr />
-                    {cart.map((pizza) => (
-                        <div className="cart-item-wrapper">
-                            <PizzaCard pizza={pizza} />
+                    <hr style={{ width: '100%' }} />
+                    {cart.map((product) => (
+                        <div className="cart-item-wrapper" key={product.id}>
+                            <PizzaCard pizza={product} />
                             <div className="cart-actions-wrapper">
-                                <span className="cart-item-price">{pizza.price}</span>
-                                <Counter />
+                                <span className="cart-item-price">Price: ${(product.unitPrice * product.count).toFixed(2)}</span>
+                                <Counter product={product} />
                             </div>
                         </div>
                     ))}

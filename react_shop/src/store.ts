@@ -1,8 +1,13 @@
 import { atom } from "jotai";
-import { Pizza } from "./pages/home/PIzzaList";
 
-export const cartContentsAtom = atom<Pizza[]>([]);
+export type Product = {
+    id: PizzaId;
+    name: string;
+    count: number;
+    unitPrice: number;
+    topping?: string;
+    totalPrice?: number;
+};
 
 export type PizzaId = number;
-export type IndividualPizzaCount = Record<PizzaId, number>;
-export const pizzaCountAtom = atom<IndividualPizzaCount>({});
+export const cartContentsAtom = atom<Product[]>([]);

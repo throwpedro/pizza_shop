@@ -1,18 +1,39 @@
-import { useState } from "react";
+import { Product, cartContentsAtom } from "../../store";
+import { useAtom } from "jotai";
 import "./counter.css";
 
-function Counter() {
-    const [count, setCount] = useState(0);
-    const increment = () => setCount((count) => count + 1);
+function Counter({ product }: { product: Product }) {
+    const [cart, setCart] = useAtom(cartContentsAtom);
+
+    const increment = () => {
+        const newCart = cart.map((p: Product) => {
+            if (p.id === product.id) {
+                p.count += 1;
+            }
+            return p;
+        });
+        return setCart(newCart);
+    }
+
     const decrement = () => {
-        if (count === 0) return;
-        return setCount((count) => count - 1);
+        // if current is 1, remove from cart.
+        if (product.count <= 1) {
+            const newCart = cart.filter((p: Product) => p.id !== product.id);
+            return setCart(newCart);
+        }
+        const newCart = cart.map((p: Product) => {
+            if (p.id === product.id) {
+                p.count -= 1;
+            }
+            return p;
+        });
+        return setCart(newCart);
     };
 
     return (
         <div className="counter-wrapper">
             <button onClick={decrement}>-</button>
-            <span>{count}</span>
+            <span>{product.count}</span>
             <button onClick={increment}>+</button>
         </div>
     );
