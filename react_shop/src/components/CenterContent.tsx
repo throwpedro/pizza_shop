@@ -5,6 +5,7 @@ type CenterContentProps = {
 const style = {
     display: 'flex',
     justifyContent: 'center',
+    height: 'calc(100vh - 100px)',
 }
 
 function CenterContent({ children }: CenterContentProps) {

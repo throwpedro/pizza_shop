@@ -6,16 +6,15 @@ export type Pizza = {
   id: number;
   name: string;
   topping: string;
+  price: number;
 };
 
 export type PizzaCardProps = {
   pizza: Pizza;
 };
 
-const PizzaCard = ({ pizza }: PizzaCardProps) => {
+export const PizzaCard = ({ pizza }: PizzaCardProps) => {
   const [cart, setCart] = useAtom(cartContentsAtom);
-
-  console.log(cart);
 
   const updateCart = () => {
     const pizzaExists = cart.find((p: Pizza) => p.id === pizza.id);
@@ -27,6 +26,7 @@ const PizzaCard = ({ pizza }: PizzaCardProps) => {
   return (
     <div className="pizza-card" onClick={updateCart}>
       <h3>{pizza.name}</h3>
+      <h4>${pizza.price}</h4>
       <p><strong>Topping:</strong> {pizza.topping}</p>
     </div>
   );
@@ -34,10 +34,11 @@ const PizzaCard = ({ pizza }: PizzaCardProps) => {
 
 const PizzaList = () => {
   const pizzas = [
-    { id: 1, name: 'Margherita', topping: 'Tomato, Mozzarella, Basil' },
-    { id: 2, name: 'Pepperoni', topping: 'Pepperoni, Cheese' },
-    { id: 3, name: 'Vegetarian', topping: 'Tomato, Mushroom, Bell Pepper' },
-    { id: 4, name: 'Hawaiian', topping: 'Ham, Pineapple' },
+    { id: 1, name: 'Pepperoni', topping: 'Pepperoni', price: 10 },
+    { id: 2, name: 'Cheese', topping: 'Cheese', price: 10 },
+    { id: 3, name: 'Sausage', topping: 'Sausage', price: 12 },
+    { id: 4, name: 'Veggie', topping: 'Veggie', price: 15 },
+    { id: 5, name: 'Meat Lovers', topping: 'Meat Lovers', price: 20 },
   ];
 
   return (

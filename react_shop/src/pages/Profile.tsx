@@ -1,12 +1,15 @@
+import CenterContent from "../components/CenterContent";
 import TopBar from "../components/topbar/TopBar";
 
 function Profile() {
     return (
         <>
             <TopBar routeName="Profile" />
-            <div>
-                <h1>Profile</h1>
-            </div>
+            <CenterContent>
+                <div>
+                    <h1>Profile</h1>
+                </div>
+            </CenterContent>
         </>
     )
 }
