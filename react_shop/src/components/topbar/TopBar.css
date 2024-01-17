@@ -1,0 +1,32 @@
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    margin: 17px 10px 0 10px;
+}
+
+.profile-icon, .cart-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0 10px;
+}
