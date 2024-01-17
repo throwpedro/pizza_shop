@@ -7,7 +7,7 @@ import Counter from "./Counter";
 import './cart.css';
 
 function Cart() {
-    const [cart, setCart] = useAtom(cartContentsAtom);
+    const [cart] = useAtom(cartContentsAtom);
     return (
         <>
             <TopBar routeName="Cart" />
