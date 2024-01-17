@@ -7,5 +7,6 @@
 
 ### Notes
 
-Uses React router for navigation
+Uses [React router](https://reactrouter.com/en/main) for navigation
 Uses [React-icons](https://react-icons.github.io/react-icons/)
+Uses [Jotai](https://jotai.org/) for state management
