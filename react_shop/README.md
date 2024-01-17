@@ -1,8 +1,7 @@
 ## Pizza shop React
 
 ### Setup
-
-`bun install`
+`bun install`  
 `bun run dev`
 
 ### Notes
