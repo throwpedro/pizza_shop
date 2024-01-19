@@ -4,9 +4,10 @@ import { Product, cartContentsAtom } from '../../store';
 
 export type PizzaCardProps = {
   pizza: Product;
+  showAddIcon?: boolean;
 };
 
-export const PizzaCard = ({ pizza }: PizzaCardProps) => {
+export const PizzaCard = ({ pizza, showAddIcon }: PizzaCardProps) => {
   const [cart, setCart] = useAtom(cartContentsAtom);
 
   const updateCart = () => {
@@ -18,8 +19,11 @@ export const PizzaCard = ({ pizza }: PizzaCardProps) => {
   }
 
   return (
-    <div className="pizza-card" onClick={updateCart}>
-      <h3>{pizza.name}</h3>
+    <div className="pizza-card">
+      <div className='pizza-card-top-row'>
+        <h3 className='pizza-card-name'>{pizza.name}</h3>
+        {showAddIcon && <span onClick={updateCart} className='pizza-card-add'>+</span>}
+      </div>
       <h4>${pizza.unitPrice}</h4>
       <p><strong>Topping:</strong> {pizza.topping}</p>
     </div>
@@ -40,7 +44,7 @@ const PizzaList = () => {
       <h2>Pizza List</h2>
       <div className="pizza-list">
         {pizzas.map(pizza => (
-          <PizzaCard key={pizza.id} pizza={pizza} />
+          <PizzaCard key={pizza.id} pizza={pizza} showAddIcon />
         ))}
       </div>
     </div>

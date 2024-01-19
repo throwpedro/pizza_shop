@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import CenterContent from "../../components/CenterContent";
 import TopBar from "../../components/topbar/TopBar";
 import { cartContentsAtom } from "../../store";
-import { PizzaCard } from "../home/PIzzaList";
+import { PizzaCard } from "../home/PizzaList";
 import Counter from "./Counter";
 import './cart.css';
 

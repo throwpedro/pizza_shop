@@ -10,15 +10,35 @@
 }
 
 .pizza-card {
-    cursor: pointer;
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.pizza-card p {
-    margin: 0;
+    .pizza-card-top-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .pizza-card-name {
+            margin-block-start: 0; /* Remove h3 the default margin */
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .pizza-card-add {
+            cursor: pointer;
+            background-color: #fff;
+            color: #333;
+            border-radius: 4px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+        }
+    }
+    p {
+        margin: 0;
+    }
 }

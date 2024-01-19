@@ -1,6 +1,6 @@
 import CenterContent from "../../components/CenterContent";
 import TopBar from "../../components/topbar/TopBar";
-import PizzaList from "./PIzzaList";
+import PizzaList from "./PizzaList";
 
 
 function Home() {
