@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import './pizzalist.css';
-import { Product, cartContentsAtom } from '../../store';
+import { Product, incrementPizzaCountAtom as incrementPizzaCountAtom } from '../../store';
 
 export type PizzaCardProps = {
   pizza: Product;
@@ -8,21 +8,13 @@ export type PizzaCardProps = {
 };
 
 export const PizzaCard = ({ pizza, showAddIcon }: PizzaCardProps) => {
-  const [cart, setCart] = useAtom(cartContentsAtom);
-
-  const updateCart = () => {
-    const pizzaExists = cart.find((p: Product) => p.id === pizza.id);
-    if (!pizzaExists) {
-      const cartPizza = { ...pizza, count: 1 };
-      setCart([...cart, cartPizza]);
-    }
-  }
+  const [, incrementPizzaCount] = useAtom(incrementPizzaCountAtom);
 
   return (
     <div className="pizza-card">
       <div className='pizza-card-top-row'>
         <h3 className='pizza-card-name'>{pizza.name}</h3>
-        {showAddIcon && <span onClick={updateCart} className='pizza-card-add'>+</span>}
+        {showAddIcon && <span onClick={() => incrementPizzaCount(pizza)} className='pizza-card-add'>+</span>}
       </div>
       <h4>${pizza.unitPrice}</h4>
       <p><strong>Topping:</strong> {pizza.topping}</p>
