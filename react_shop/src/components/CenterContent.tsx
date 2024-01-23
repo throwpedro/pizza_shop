@@ -6,6 +6,7 @@ const style = {
     display: 'flex',
     justifyContent: 'center',
     height: 'calc(100vh - 100px)',
+    minWidth: '300px',
 }
 
 function CenterContent({ children }: CenterContentProps) {

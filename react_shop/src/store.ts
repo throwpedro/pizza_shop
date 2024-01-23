@@ -10,6 +10,7 @@ export type Product = {
 
 export type PizzaId = number;
 export const cartContentsAtom = atom<Product[]>([]);
+export const isCartEmptyAtom = atom((get) => get(cartContentsAtom).length === 0);
 
 export const incrementPizzaCountAtom = atom(null, (get, set, pizzaUpdate: Product) => {
     const cart = get(cartContentsAtom);
