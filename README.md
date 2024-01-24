@@ -7,3 +7,6 @@ It all looks something like this:
 
 Depending on the specific solution more stuff might be included like a details page or error pages.
 Go to the library specific README to learn more.
+
+Few if any of the solutions are meant to be complete projects.
+It's just exploratory code to try out different tools.
