@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai';
 import './pizzalist.css';
 import { Product, incrementPizzaCountAtom as incrementPizzaCountAtom } from '../../store';
+import CenterContent from '../../components/CenterContent';
 
 export type PizzaCardProps = {
   pizza: Product;
@@ -32,15 +33,17 @@ const PizzaList = () => {
   ];
 
   return (
-    <div className="pizza-list-container">
-      <h2>Pizza List</h2>
-      <div className="pizza-list">
-        {pizzas.map(pizza => (
-          <PizzaCard key={pizza.id} pizza={pizza} showAddIcon />
-        ))}
-      </div>
-    </div>
+    <CenterContent>
+        <div className="pizza-list-container">
+          <h2>Pizza List</h2>
+          <div className="pizza-list">
+            {pizzas.map(pizza => (
+              <PizzaCard key={pizza.id} pizza={pizza} showAddIcon />
+            ))}
+          </div>
+        </div>
+    </CenterContent>
   );
 };
-  
-  export default PizzaList;
+
+export default PizzaList;

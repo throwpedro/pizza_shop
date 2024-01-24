@@ -7,8 +7,14 @@ import Counter from "./Counter";
 import './cart.css';
 
 function Cart() {
-    const [cart] = useAtom(cartContentsAtom);
+    const [cart, setCart] = useAtom(cartContentsAtom);
     const [isCartEmpty] = useAtom(isCartEmptyAtom);
+
+    const handlePurchase = () => {
+        alert('Thank you for your purchase!');
+        setCart([]);
+    }
+
     return (
         <>
             <TopBar routeName="Cart" />
@@ -16,7 +22,6 @@ function Cart() {
                 <div className="cart-wrapper">
                     <div className="cart-top">
                         <h1>Cart</h1>
-                        {!isCartEmpty && <span>total: ${cart.reduce((acc, curr) => acc + curr.unitPrice * curr.count, 0).toFixed(2)}</span>}
                     </div>
 
                     <hr style={{ width: '100%' }} />
@@ -29,6 +34,11 @@ function Cart() {
                             </div>
                         </div>
                     ))}
+                    {!isCartEmpty &&
+                        <div className="cart-purchase">
+                            <span>total: ${cart.reduce((acc, curr) => acc + curr.unitPrice * curr.count, 0).toFixed(2)}</span>
+                            <button onClick={handlePurchase} className="cart-purchase-button">Purchase</button>
+                        </div>}
                 </div>
             </CenterContent>
         </>

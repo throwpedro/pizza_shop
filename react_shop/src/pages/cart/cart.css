@@ -27,3 +27,22 @@
     text-decoration: underline;
     margin-bottom: 5px;
 }
+
+.cart-purchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-purchase-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
