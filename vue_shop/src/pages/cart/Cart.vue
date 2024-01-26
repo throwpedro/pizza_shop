@@ -1,8 +1,9 @@
 <script setup lang="ts">
+  import Toolbar from '../../components/Toolbar.vue';
 </script>
 
 <template>
-   <router-view></router-view>
+  <Toolbar view="Cart" />
 </template>
 
 <style scoped>
