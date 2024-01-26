@@ -36,20 +36,23 @@ const ProductList = () => {
                 setProducts(data);
               }
             })
-            .catch((error) => console.log(error));
+            .catch(() => {
+              // We are just messin around here, so we'll just set some dummy data
+              // in case the API isn't giving us anything.
+              setProducts(
+                [
+                  { id: '1', name: 'Pepperoni', topping: 'Pepperoni', count: 0, unitPrice: 10 },
+                  { id: '2', name: 'Cheese', topping: 'Cheese', count: 0, unitPrice: 10 },
+                  { id: '3', name: 'Sausage', topping: 'Sausage', count: 0, unitPrice: 12 },
+                  { id: '4', name: 'Veggie', topping: 'Veggie', count: 0, unitPrice: 15 },
+                  { id: '5', name: 'Meat Lovers', topping: 'Meat Lovers', count: 0, unitPrice: 20 },
+                ]
+              )
+            });
       return () => {
         cancelled = true;
       }
     }, []);
-
-  // Can be used for local testing without the API
-  // const products: Product[] = [
-  //   { id: '1', name: 'Pepperoni', topping: 'Pepperoni', count: 0, unitPrice: 10 },
-  //   { id: '2', name: 'Cheese', topping: 'Cheese', count: 0, unitPrice: 10 },
-  //   { id: '3', name: 'Sausage', topping: 'Sausage', count: 0, unitPrice: 12 },
-  //   { id: '4', name: 'Veggie', topping: 'Veggie', count: 0, unitPrice: 15 },
-  //   { id: '5', name: 'Meat Lovers', topping: 'Meat Lovers', count: 0, unitPrice: 20 },
-  // ];
 
   return (
     <CenterContent>
