@@ -1,31 +1,31 @@
-.pizza-list-container {
+.product-list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.pizza-list {
+.product-list {
     display: flex;
     flex-direction: column;
 }
 
-.pizza-card {
+.product-card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    .pizza-card-top-row {
+    .product-card-top-row {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        .pizza-card-name {
+        .product-card-name {
             margin-block-start: 0; /* Remove h3 the default margin */
             font-size: 20px;
             font-weight: bold;
         }
-        .pizza-card-add {
+        .product-card-add {
             cursor: pointer;
             background-color: #fff;
             color: #333;

@@ -1,6 +1,6 @@
 import CenterContent from "../../components/CenterContent";
 import TopBar from "../../components/topbar/TopBar";
-import PizzaList from "./PizzaList";
+import ProductList from "./ProductList";
 
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
         <>
             <TopBar routeName="Home" />
             <CenterContent>
-               <PizzaList /> 
+               <ProductList /> 
             </CenterContent>
         </>
     );

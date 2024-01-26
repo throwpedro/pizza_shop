@@ -1,16 +1,16 @@
-import { Product, decrementPizzaCountAtom, incrementPizzaCountAtom } from "../../store";
+import { Product, decrementProductCountAtom, incrementProductCountAtom } from "../../store";
 import { useAtom } from "jotai";
 import "./counter.css";
 
 function Counter({ product }: { product: Product }) {
-    const [, incrementPizzaCount] = useAtom(incrementPizzaCountAtom);
-    const [, decrementPizzaCount] = useAtom(decrementPizzaCountAtom);
+    const [, incrementProductCount] = useAtom(incrementProductCountAtom);
+    const [, decrementProductCount] = useAtom(decrementProductCountAtom);
 
     return (
         <div className="counter-wrapper">
-            <button onClick={() => decrementPizzaCount(product.id)}>-</button>
+            <button onClick={() => decrementProductCount(product.id)}>-</button>
             <span>{product.count}</span>
-            <button onClick={() => incrementPizzaCount(product)}>+</button>
+            <button onClick={() => incrementProductCount(product)}>+</button>
         </div>
     );
 }

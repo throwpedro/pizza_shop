@@ -1,40 +1,40 @@
 import { atom } from "jotai";
 
 export type Product = {
-    id: PizzaId;
+    id: ProductId;
     name: string;
     count: number;
     unitPrice: number;
     topping?: string;
 };
 
-export type PizzaId = number;
+export type ProductId = string;
 export const cartContentsAtom = atom<Product[]>([]);
 export const isCartEmptyAtom = atom((get) => get(cartContentsAtom).length === 0);
 
-export const incrementPizzaCountAtom = atom(null, (get, set, pizzaUpdate: Product) => {
+export const incrementProductCountAtom = atom(null, (get, set, productUpdate: Product) => {
     const cart = get(cartContentsAtom);
-    const product = cart.find((product) => product.id === pizzaUpdate.id);
+    const product = cart.find((product) => product.id === productUpdate.id);
     if (!product) {
-        set(cartContentsAtom, [...cart, pizzaUpdate]);
+        set(cartContentsAtom, [...cart, productUpdate]);
     }
     set(cartContentsAtom, (prev) =>
-        prev.map((pizza) => pizza.id === pizzaUpdate.id
-            ? { ...pizza, count: pizza.count + 1 }
-            : pizza));
+        prev.map((product) => product.id === productUpdate.id
+            ? { ...product, count: product.count + 1 }
+            : product));
 });
 
-export const decrementPizzaCountAtom = atom(null, (get, set, pizzaUpdateId: PizzaId) => {
+export const decrementProductCountAtom = atom(null, (get, set, productUpdateId: ProductId) => {
     const cart = get(cartContentsAtom);
-    const pizza = cart.find((pizza) => pizza.id === pizzaUpdateId);
-    if (!pizza) return;
-    // Remove pizza from cart if count is 1 and we try to decrement
-    if (pizza.count <= 1) {
-        set(cartContentsAtom, cart.filter((pizza) => pizza.id !== pizzaUpdateId));
+    const product = cart.find((product) => product.id === productUpdateId);
+    if (!product) return;
+    // Remove product from cart if count is 1 and we try to decrement
+    if (product.count <= 1) {
+        set(cartContentsAtom, cart.filter((product) => product.id !== productUpdateId));
     } else {
         set(cartContentsAtom, (prev) =>
-            prev.map((pizza) => pizza.id === pizzaUpdateId
-                ? { ...pizza, count: pizza.count - 1 }
-                : pizza));
+            prev.map((product) => product.id === productUpdateId
+                ? { ...product, count: product.count - 1 }
+                : product));
     }
 });

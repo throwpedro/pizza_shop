@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import CenterContent from "../../components/CenterContent";
 import TopBar from "../../components/topbar/TopBar";
 import { cartContentsAtom, isCartEmptyAtom } from "../../store";
-import { PizzaCard } from "../home/PizzaList";
+import { ProductCard } from "../home/ProductList";
 import Counter from "./Counter";
 import './cart.css';
 
@@ -27,7 +27,7 @@ function Cart() {
                     <hr style={{ width: '100%' }} />
                     {cart.map((product) => (
                         <div className="cart-item-wrapper" key={product.id}>
-                            <PizzaCard pizza={product} />
+                            <ProductCard product={product} />
                             <div className="cart-actions-wrapper">
                                 <span className="cart-item-price">Price: ${(product.unitPrice * product.count).toFixed(2)}</span>
                                 <Counter product={product} />
