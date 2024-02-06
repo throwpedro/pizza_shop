@@ -1,23 +1,5 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import DataView from "primevue/dataview";
-import Button from "primevue/button";
-
-// onMounted(() => {
-//     ProductService.getProductsSmall().then((data) => (products.value = data.slice(0, 5)));
-// });
-
-const products = ref([
-    {
-        name: "Magharita Pizza",
-        toppings: "Cheese, Tomato",
-        price: 10,
-    }
-]);
-</script>
-
 <template>
-    <div class="card">
+    <div>
         <DataView :value="products" dataKey="products">
             <template #list="slotProps">
                 <div class="grid grid-nogutter">
@@ -59,3 +41,17 @@ const products = ref([
         </DataView>
     </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import DataView from "primevue/dataview";
+import Button from "primevue/button";
+
+const products = ref([
+    {
+        name: "Magharita Pizza",
+        toppings: "Cheese, Tomato",
+        price: 10,
+    }
+]);
+</script>
