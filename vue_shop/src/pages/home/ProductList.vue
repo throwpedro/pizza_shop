@@ -46,6 +46,7 @@
 import { ref } from "vue";
 import DataView from "primevue/dataview";
 import Button from "primevue/button";
+import Tag from "primevue/tag";
 
 const products = ref([
     {
