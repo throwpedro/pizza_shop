@@ -1,22 +1,22 @@
 import { render } from "solid-js/web";
-import App from "./App";
+import Home from "./pages/home/Home";
 import Cart from "./pages/cart/Cart";
 import Profile from "./pages/profile/Profile";
 import { Router, Route } from "@solidjs/router";
 import "./index.css";
 
-const root = document.getElementById('root');
+const root = document.getElementById("root");
 
 if (!root) {
-  throw new Error('No root element found!');
+  throw new Error("No root element found!");
 }
 
 render(
   () => (
     <Router>
-        <Route path="/" component={App} />
-        <Route path="/cart" component={Cart} /> {/* 👈 Define the about page route */}
-        <Route path="/profile" component={Profile} /> {/* 👈 Define the contact page route */}
+      <Route path="/" component={Home} />
+      <Route path="/cart" component={Cart} />{" "}
+      <Route path="/profile" component={Profile} />{" "}
     </Router>
   ),
   root,

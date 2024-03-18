@@ -1,7 +1,13 @@
 import { type Component } from "solid-js";
+import Header from "../../components/header";
 
 const Profile: Component = () => {
-    return <h1>Profile</h1>;
+  return (
+    <>
+      <Header title="Profile" />
+      <div>Profile</div>
+    </>
+  );
 };
 
 export default Profile;
