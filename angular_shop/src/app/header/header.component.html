@@ -1,12 +1,14 @@
 <mat-toolbar class="toolbar">
-  <a mat-icon-button routerLink="/profile" routerLinkActive="active">
-    <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="person" />
-  </a>
   <a mat-icon-button routerLink="/" routerLinkActive="active">
     <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home" />
   </a>
   <h3>PIZZA SHOP</h3>
-  <a mat-icon-button routerLink="/cart" routerLinkActive="active">
-    <mat-icon aria-hidden="false" aria-label="shopping cart icon" fontIcon="shopping_cart" />
-  </a>
+  <div class="flex justify-between w-[80px]">
+    <a mat-icon-button routerLink="/profile" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="person" />
+    </a>
+    <a mat-icon-button routerLink="/cart" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="shopping cart icon" fontIcon="shopping_cart" />
+    </a>
+  </div>
 </mat-toolbar>

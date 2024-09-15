@@ -13,7 +13,7 @@ export const routes: Routes = [
     component: CartComponent,
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
 ];
