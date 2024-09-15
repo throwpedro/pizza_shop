@@ -1,18 +1,12 @@
 <mat-toolbar class="toolbar">
-    @if (currentRoute === '/') {
-
-        <a mat-icon-button routerLink="/profile" routerLinkActive="active">
-            <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="person" />
-        </a>
-    } @else {
-        <a mat-icon-button routerLink="/" routerLinkActive="active">
-            <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home" />
-        </a>
-    }
-    <h3>
-        PIZZA SHOP
-    </h3>
-    <a mat-icon-button routerLink="/cart" routerLinkActive="active">
-        <mat-icon aria-hidden="false" aria-label="shopping cart icon" fontIcon="shopping_cart" />
-    </a>
+  <a mat-icon-button routerLink="/profile" routerLinkActive="active">
+    <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="person" />
+  </a>
+  <a mat-icon-button routerLink="/" routerLinkActive="active">
+    <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home" />
+  </a>
+  <h3>PIZZA SHOP</h3>
+  <a mat-icon-button routerLink="/cart" routerLinkActive="active">
+    <mat-icon aria-hidden="false" aria-label="shopping cart icon" fontIcon="shopping_cart" />
+  </a>
 </mat-toolbar>
